@@ -1,0 +1,37 @@
+.notify {
+}
+.notify .notifyContainer {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 1111;
+}
+.notify .topLeft {
+  top: 0;
+  left: 0;
+}
+.notify .topRight {
+  right: 0;
+  top: 0;
+}
+.notify .bottomRight {
+  right: 0;
+  bottom: 0;
+}
+.notify .bottomLeft {
+  left: 0;
+  bottom: 0;
+}
+.notify .topMiddle {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.notify .middle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.notify .notifyContainer .singleView {
+  padding: 10px 0px;
+}

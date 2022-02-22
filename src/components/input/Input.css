@@ -1,0 +1,24 @@
+.inputContainer::after {
+  content: "";
+  height: 1px;
+  width: 0;
+  display: block;
+  transition: width 0.1s linear;
+  @apply bg-primary-800 opacity-10 rounded-sm;
+}
+
+.inputContainer:focus-within::after {
+  width: 100%;
+}
+.inputContainer:focus-within .search {
+  opacity: 0.5;
+}
+
+.inputContainer input {
+  color: inherit;
+  @apply px-2 w-full h-full bg-inherit focus:outline-none focus:border-b-0 border-primary-400;
+}
+
+.inputContainer input::placeholder {
+  @apply text-primary-700;
+}
