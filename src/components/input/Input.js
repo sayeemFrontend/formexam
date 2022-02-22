@@ -1,19 +1,25 @@
-import { SearchIcon } from "@heroicons/react/outline";
 import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import "./Input.css";
-export default function Input({ label, type, onChanged, name, placeholder, icon }) {
-  const inputRef = useRef();
 
-  const handleSearchClick = () => {
-    inputRef.current.focus();
+export default function Input({ label, onChanged, name, placeholder, type, value, err }) {
+  const labelRef = useRef();
+
+  const handleLabel = () => {
+    if (value === "") {
+      labelRef.current.style.top = `${50}%`;
+    }
   };
+  const focusHandle = () => {
+    labelRef.current.style.top = `${0}`;
+  };
+
   return (
-    <div className="inputContainer px-2 w-full h-full bg-inherit text-base ">
-      <div className="flex items-center">
-        <input ref={inputRef} type={type ? type : "text"} onChange={onChanged && onChanged} placeholder={placeholder && placeholder} name={name && name} />
-        {icon && <SearchIcon onClick={handleSearchClick} className="search  ml-auto w-7 text-primary-600" />}
-      </div>
+    <div className={"input " + (err === true ? "err" : "")} onFocus={focusHandle} onBlur={handleLabel}>
+      <label ref={labelRef} htmlFor="">
+        {label && label}
+      </label>
+
+      {type === "textarea" ? <textarea onChange={onChanged && onChanged} name={name && name} placeholder={placeholder ? placeholder : ""} type={type ? type : "text"} value={value} /> : <input onChange={onChanged && onChanged} name={name && name} placeholder={placeholder ? placeholder : ""} type={type ? type : "text"} value={value} />}
     </div>
   );
 }

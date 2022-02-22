@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import classes from "./Notify.module.css";
+import "./Notify.css";
 
 export default function Notify({ viewList, position }) {
   const parentRef = useRef();
@@ -8,23 +8,23 @@ export default function Notify({ viewList, position }) {
     let styles;
     switch (position) {
       case "top-left":
-        styles = classes.topLeft;
+        styles = "topLeft";
         break;
       case "top-right":
-        styles = classes.topRight;
+        styles = "topRight";
         break;
       case "bottom-left":
-        styles = classes.bottomLeft;
+        styles = "bottomLeft";
         break;
       case "bottom-right":
-        styles = classes.bottomRight;
+        styles = "bottomRight";
         break;
       case "top-middle":
-        styles = classes.topMiddle;
+        styles = "topMiddle";
         break;
 
       default:
-        styles = classes.middle;
+        styles = "middle";
         break;
     }
     return styles;
@@ -39,10 +39,10 @@ export default function Notify({ viewList, position }) {
     );
   }, [viewList]);
   return (
-    <div className={classes.notify}>
-      <div ref={parentRef} className={classes.notifyContainer + " " + returnStyle()}>
+    <div className="notify">
+      <div ref={parentRef} className={"notifyContainer " + returnStyle()}>
         {viewList?.map((v) => (
-          <div className={classes.singleView}>{v}</div>
+          <div className="singleView">{v}</div>
         ))}
       </div>
     </div>

@@ -49,4 +49,11 @@
   .text-black {
     color: black;
   }
+
+  .bg-white {
+    color: #ffffff;
+  }
+  .bg-black {
+    color: black;
+  }
 }

@@ -1,0 +1,21 @@
+.loginForm {
+  background: inherit;
+  padding: 20px;
+  color: grey;
+}
+.loginForm .singleBlock {
+  height: 46px;
+  margin-bottom: 20px;
+  background-color: inherit;
+}
+.loginForm .singleBlock:nth-child(3) {
+  margin-bottom: 0;
+}
+
+.loginForm .btnContainer {
+  width: 100%;
+  height: 46px;
+  border-radius: 8px;
+  color: green;
+  background-color: rgba(169, 169, 169, 0.753);
+}

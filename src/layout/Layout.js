@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-
-import HomePage from "../pages/home/Home";
+import Login from "../pages/login/Login";
 import Product from "../pages/product/Product";
 
 import Navbar from "../parts/navbar/Navbar";
@@ -11,7 +10,7 @@ export default function Layout(params) {
       <Navbar />
       <div className=" main">
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<Login />} />
           <Route path="/product/:id" element={<Product />} />
         </Routes>
       </div>
