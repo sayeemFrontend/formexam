@@ -32,7 +32,7 @@ export default function LoginForm({ onClicked }) {
   const handleClick = () => {
     if (error.userName === false && error.password === false) {
       onClicked();
-    } else {
+    } else if (error.userName === null || error.password === null) {
       updateError({ ...error, password: true, userName: true });
     }
   };
