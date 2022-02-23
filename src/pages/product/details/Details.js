@@ -1,4 +1,3 @@
-import "./Details.css";
 import ChevronRightIcon from "@heroicons/react/outline/ChevronRightIcon";
 import StarIcon from "@heroicons/react/outline/StarIcon";
 import { useContext, useState } from "react";
@@ -28,7 +27,7 @@ export default function Details({ item }) {
       <div className="flex flex-col lg:flex-row">
         <div className="leftPart w-full lg:w-1/2">
           <div className="imgFrame bg-primary-300 mb-6 ">
-            <img src={activeImg} alt="productImage" />
+            <img src={activeImg} alt="productImage" width="100%" height="auto" />
           </div>
           <div className="slider">
             <div className="flex flex-row justify-between items-center">
