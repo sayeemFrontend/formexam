@@ -5,7 +5,6 @@ import { CartContext } from "../../../App";
 import Button from "../../../components/button/Button";
 import { discountedPrice, ratingToArray } from "../../../methods/calculations/calculations";
 import Notify from "../../../methods/notify/Notify";
-import "./Details.css";
 
 export default function Details({ item }) {
   const sizes = [

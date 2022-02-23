@@ -1,10 +1,10 @@
+import "./Product.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Button from "../../components/button/Button";
-import Details from "./details/Details";
-import "./Product.css";
 import ShopByCategory from "./shopByCategory/ShopByCategory";
 import TrendClothes from "./trendClothes/TrendClothes";
+import Details from "./details/Details";
 export default function Product(params) {
   const [product, setProduct] = useState(null);
   const [trendClothes, updateTrendClothes] = useState(null);
