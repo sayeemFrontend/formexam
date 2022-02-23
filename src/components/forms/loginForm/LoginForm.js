@@ -32,12 +32,14 @@ export default function LoginForm({ onClicked }) {
   const handleClick = () => {
     if (error.userName === false && error.password === false) {
       onClicked();
+    } else {
+      updateError({ ...error, password: true, userName: true });
     }
   };
 
   return (
     <div className="loginForm h-full w-full">
-      <h2 className="pb-4 text-center text-primary-700">Fill The Form</h2>
+      <h2 className="pb-12 text-center text-primary-700">Fill The Form</h2>
       <div className="singleBlock">
         <Input err={error.userName} onChanged={(e) => handleChange(e.target.name, e.target.value)} label="UserName" value={user.userName} name="userName" />
       </div>
@@ -45,7 +47,7 @@ export default function LoginForm({ onClicked }) {
         <Input err={error.password} onChanged={(e) => handleChange(e.target.name, e.target.value)} label="Password" type="password" value={user.password} name="password" />
       </div>
 
-      {error.password === true || error.userName === true ? <div className="text-center text-secondary-700">Empty Not Allowed</div> : ""}
+      {error.password === true || error.userName === true ? <div className="text-center text-secondary-700">Type Something</div> : ""}
 
       <div className="bg-secondary-200 mt-5 hover:bg-secondary-300 bg-gradient-to-b py-2 text-xl  text-primary-800 hover:text-primary-900">
         <Button onClicked={handleClick} title="Login" />

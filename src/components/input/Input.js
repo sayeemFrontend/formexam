@@ -19,7 +19,7 @@ export default function Input({ label, onChanged, name, placeholder, type, value
         {label && label}
       </label>
 
-      {type === "textarea" ? <textarea onChange={onChanged && onChanged} name={name && name} placeholder={placeholder ? placeholder : ""} type={type ? type : "text"} value={value} /> : <input onChange={onChanged && onChanged} name={name && name} placeholder={placeholder ? placeholder : ""} type={type ? type : "text"} value={value} />}
+      {type === "textarea" ? <textarea onChange={onChanged && onChanged} name={name && name} placeholder={placeholder ? placeholder : ""} type={type ? type : "text"} value={value} /> : <input onChange={onChanged && onChanged} name={name && name} placeholder={placeholder ? placeholder : ""} type={type ? type : "text"} value={value == null ? "" : value} />}
     </div>
   );
 }

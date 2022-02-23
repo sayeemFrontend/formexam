@@ -12,11 +12,11 @@ export default function Login(params) {
 
   const handleClick = () => {
     updateViewList([...viewList, view]);
-    navigate("/produce/1");
+    navigate("/product/1");
   };
 
   return (
-    <div className="login w-screen h-screen bg-gradient-to-l bg-primary-200 left-0 top-0 fixed">
+    <div className="login w-screen h-screen bg-gradient-to-l bg-primary-800 left-0 top-0 fixed">
       <Notify position="top-middle" viewList={viewList} />
       <div className="formContainer w-11/12 md:w-96 h-max centerXY transCenter  bg-secondary-100 text-primary-700 px-4 py-8">
         <LoginForm onClicked={handleClick} />

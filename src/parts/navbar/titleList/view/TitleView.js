@@ -10,10 +10,10 @@ export default function TitleView({ item }) {
   };
 
   return (
-    <div className="titleView px-4 md:px-0 text-primary-600  list-none text-lg lg:text-xl">
+    <div className="titleView px-4 md:px-0  text-primary-600  list-none text-lg lg:text-xl">
       {item.sub ? (
         <div className="item relative">
-          <ul onClick={() => handleClick(item.id)} className=" centerY justify-between cursor-pointer">
+          <ul onClick={() => handleClick(item.id)} className=" centerY justify-between cursor-pointer my-2 md:my-0">
             <li className="text-base lg:text-lg ">{item.title}</li>
             <li className={"w-4 h-4 ml-3 transform transition-all duration-300 " + (item.id === expandId ? "rotate-180" : "rotate-0")}>
               <ChevronDownIcon />
@@ -21,7 +21,7 @@ export default function TitleView({ item }) {
           </ul>
         </div>
       ) : (
-        <ul className="centerY cursor-pointer">
+        <ul className="centerY cursor-pointer my-2 md:my-0">
           <li className="text-base md:text-lg ">{item.title}</li>
         </ul>
       )}

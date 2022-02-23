@@ -1,7 +1,8 @@
 import { HeartIcon, ShoppingBagIcon } from "@heroicons/react/outline";
 import UserIcon from "@heroicons/react/outline/UserIcon";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { CartContext } from "../../../App";
 import Search from "../../../components/search/Search";
 import "./IconList.css";
 
@@ -9,6 +10,7 @@ export default function IconList(params) {
   const [modal, setModal] = useState(false);
   const divRef = useRef();
   const navigate = useNavigate();
+  const { value } = useContext(CartContext);
 
   const clickFun = (e) => {
     if (modal && divRef.current && !e.target.contains(divRef.current)) {
@@ -40,8 +42,9 @@ export default function IconList(params) {
         <div className="w-5 md:w-6 text-primary-600 cursor-not-allowed">
           <HeartIcon />
         </div>
-        <div className="w-5 md:w-6 text-primary-600 cursor-not-allowed">
+        <div className="w-5 md:w-6 text-primary-600 cursor-not-allowed relative">
           <ShoppingBagIcon className="text-xs" />
+          {value.length > 0 && <div className="absolute w-6 h-6 bg-secondary-300 text-secondary-600 centerXY rounded-full text-base -right-4 bottom-2">{value.length}</div>}
         </div>
       </div>
     </div>

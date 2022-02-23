@@ -1,0 +1,11 @@
+.productCart .leftPart > img {
+  width: auto;
+  height: 240px;
+}
+
+@media screen and(min-width: 1024px) {
+  .productCart .leftPart > img {
+    width: auto;
+    height: 280px;
+  }
+}

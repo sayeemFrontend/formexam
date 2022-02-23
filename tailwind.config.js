@@ -19,7 +19,7 @@ module.exports = {
     },
     colors: {
       primary: colors.stone,
-      secondary: colors.red,
+      secondary: colors.rose,
     },
   },
   plugins: [],

@@ -11,7 +11,7 @@ export default function Navbar(params) {
   const navigate = useNavigate();
   return (
     <div className="navbar h-20 bg-white border-b border-b-primary-300">
-      {modal && <ModalFull onClicked={() => setModal(false)} View={() => <TitleList onClosed={() => setModal(false)} />} pos="top" width="w-full" />}
+      {modal && <ModalFull onClicked={() => setModal(false)} View={() => <TitleList onClosed={() => setModal(false)} />} pos="center" width="w-11/12" />}
 
       <div className="container w-full h-full centerY justify-between">
         <h4 onClick={() => navigate("/")} className="text-primary-700 hidden md:block cursor-pointer">

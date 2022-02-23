@@ -19,7 +19,7 @@
     @apply text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold;
   }
   body {
-    @apply font-serif;
+    font-family: sans-serif;
   }
   img {
     /* @apply w-full h-full max-w-7xl min-w-0; */
