@@ -8,7 +8,7 @@ import Notify from "../../methods/notify/Notify";
 import "./ProductCart.css";
 
 export default function ProductCart({ item }) {
-  const { value, dispatch } = useContext(CartContext);
+  const { dispatch } = useContext(CartContext);
   const [viewList, updateViewList] = useState([]);
 
   const view = <h5 className="text-secondary-600 px-6 py-1 bg-primary-200">Item Added</h5>;

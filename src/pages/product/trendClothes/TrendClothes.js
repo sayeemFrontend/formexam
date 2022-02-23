@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import ProductCart from "../../../views/product/ProductCart";
 import "./TrendClothes.css";
 

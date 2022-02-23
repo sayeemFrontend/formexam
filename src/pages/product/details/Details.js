@@ -1,6 +1,6 @@
 import ChevronRightIcon from "@heroicons/react/outline/ChevronRightIcon";
 import StarIcon from "@heroicons/react/outline/StarIcon";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../../App";
 import Button from "../../../components/button/Button";
 import { discountedPrice, ratingToArray } from "../../../methods/calculations/calculations";
@@ -8,19 +8,18 @@ import Notify from "../../../methods/notify/Notify";
 import "./Details.css";
 
 export default function Details({ item }) {
-  const [imgList, updateImgList] = useState([item.image, item.image, item.image]);
-  const { value, dispatch } = useContext(CartContext);
-  const [viewList, updateViewList] = useState([]);
-  const view = <h5 className="text-secondary-600 px-6 py-1 bg-primary-200">Item Added</h5>;
-
   const sizes = [
     { id: 1, title: "S", value: "small" },
     { id: 2, title: "M", value: "medium" },
     { id: 3, title: "L", value: "large" },
     { id: 4, title: "XL", value: "extraLarge" },
   ];
+  const [imgList] = useState([item.image, item.image, item.image]);
+  const { dispatch } = useContext(CartContext);
+  const [viewList, updateViewList] = useState([]);
   const [activeImg, setActiveImg] = useState(imgList[0]);
   const [selSize, setSelSize] = useState(sizes[3]);
+  const view = <h5 className="text-secondary-600 px-6 py-1 bg-primary-200">Item Added</h5>;
 
   return (
     <div className="details py-10 ">

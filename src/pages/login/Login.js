@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "../../components/forms/loginForm/LoginForm";
-import Notify from "../../methods/notify/Notify";
 import "./Login.css";
 
 export default function Login(params) {
