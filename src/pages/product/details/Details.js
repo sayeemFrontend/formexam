@@ -1,3 +1,4 @@
+import "./Details.css";
 import ChevronRightIcon from "@heroicons/react/outline/ChevronRightIcon";
 import StarIcon from "@heroicons/react/outline/StarIcon";
 import { useContext, useState } from "react";
