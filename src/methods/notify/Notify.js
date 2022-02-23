@@ -41,8 +41,10 @@ export default function Notify({ viewList, position }) {
   return (
     <div className="notify">
       <div ref={parentRef} className={"notifyContainer " + returnStyle()}>
-        {viewList?.map((v) => (
-          <div className="singleView">{v}</div>
+        {viewList?.map((v, index) => (
+          <div key={index} className="singleView">
+            {v}
+          </div>
         ))}
       </div>
     </div>

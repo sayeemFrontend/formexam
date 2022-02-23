@@ -4,11 +4,14 @@ import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../../App";
 import Button from "../../../components/button/Button";
 import { discountedPrice, ratingToArray } from "../../../methods/calculations/calculations";
+import Notify from "../../../methods/notify/Notify";
 import "./Details.css";
 
 export default function Details({ item }) {
   const [imgList, updateImgList] = useState([item.image, item.image, item.image]);
   const { value, dispatch } = useContext(CartContext);
+  const [viewList, updateViewList] = useState([]);
+  const view = <h5 className="text-secondary-600 px-6 py-1 bg-primary-200">Item Added</h5>;
 
   const sizes = [
     { id: 1, title: "S", value: "small" },
@@ -19,17 +22,9 @@ export default function Details({ item }) {
   const [activeImg, setActiveImg] = useState(imgList[0]);
   const [selSize, setSelSize] = useState(sizes[3]);
 
-  // const discountedPrice = (discount) => {
-  //   const price = item.price - item.price * (discount / 100);
-  //   return Math.floor(price);
-  // };
-  // const ratingLn = Math.floor(item.rating.rate);
-  // const tempArray = [];
-  // for (let i = 0; i < ratingLn; i++) {
-  //   tempArray.push(i);
-  // }
   return (
     <div className="details py-10 ">
+      <Notify position="top-right" viewList={viewList} />
       <h5 className="text-primary-800 mb-6 te">Fashion club exclusives / Outdoor</h5>
       <div className="flex flex-col lg:flex-row">
         <div className="leftPart w-full lg:w-1/2">
@@ -73,8 +68,8 @@ export default function Details({ item }) {
           </div>
 
           <div className="mb-20 flex flex-wrap items-center ">
-            <div className="btnContainer w-32 h-10 mr-10 bg-primary-100 text-secondary-600 border border-primary-300 border-solid">
-              <Button onClicked={() => dispatch(item)} title="Add to bag" />
+            <div className="btnContainer w-32 h-10 mr-10 bg-primary-100 text-secondary-600 border border-primary-300 border-solid hover:opacity-70">
+              <Button onClicked={() => dispatch(item) & updateViewList([...viewList, view])} title="Add to bag" />
             </div>
             <div className="btnContainer my-3 w-36 h-10 bg-secondary-600 text-primary-100">
               <Button title="Purchase now" />

@@ -1,16 +1,21 @@
 import { StarIcon } from "@heroicons/react/outline";
 import HeartIcon from "@heroicons/react/outline/HeartIcon";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../App";
 import Button from "../../components/button/Button";
 import { discountedPrice, ratingToArray } from "../../methods/calculations/calculations";
+import Notify from "../../methods/notify/Notify";
 import "./ProductCart.css";
 
 export default function ProductCart({ item }) {
   const { value, dispatch } = useContext(CartContext);
+  const [viewList, updateViewList] = useState([]);
+
+  const view = <h5 className="text-secondary-600 px-6 py-1 bg-primary-200">Item Added</h5>;
 
   return (
     <div className="productCart my-5 w-full">
+      <Notify position="top-right" viewList={viewList} />
       <div className="flex flex-col lg:flex-row">
         <div className="leftPart centerXY w-full lg:w-1/4 ">
           <img src={item.image} alt="productImg" />
@@ -43,8 +48,8 @@ export default function ProductCart({ item }) {
                 <HeartIcon />
               </div>
             </div>
-            <div className="btnContainer w-28 h-10 mr-10 bg-primary-100 text-secondary-600 border border-primary-300 border-solid">
-              <Button onClicked={() => dispatch(item)} title="Add to bag" />
+            <div className="btnContainer w-28 h-10 mr-10 bg-primary-100 text-secondary-600 border border-primary-300 border-solid hover:opacity-70">
+              <Button onClicked={() => dispatch(item) & updateViewList([...viewList, view])} title="Add to bag" />
             </div>
           </div>
         </div>
